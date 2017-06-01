@@ -31,7 +31,8 @@ Pathname.prototype = {
     return !path.isAbsolute(this.toString())
   },
 
-  join: function(...args) {
+  join: function() {
+    let args = Array.from(arguments)
     return new Pathname(path.join.apply(this, [this.toString()].concat(args)))
   },
 

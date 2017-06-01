@@ -1,0 +1,36 @@
+{
+  "name": "pathname",
+  "version": "0.0.1",
+  "description": "Node.js implementation of Ruby's Pathname",
+  "main": "index.js",
+  "scripts": {
+    "doc": "jsdoc index.js",
+    "test": "nyc mocha"
+  },
+  "engines": {
+    "node": ">=4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yadex205/node-pathname.git"
+  },
+  "keywords": [
+    "pathname"
+  ],
+  "author": "Kanon Kakuno <yadex205@outlook.jp>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yadex205/node-pathname/issues"
+  },
+  "homepage": "https://github.com/yadex205/node-pathname#readme",
+  "devDependencies": {
+    "chai": "^4.0.1",
+    "jsdoc": "^3.4.3",
+    "mocha": "^3.4.2",
+    "nyc": "^11.0.1",
+    "pre-commit": "^1.2.2"
+  },
+  "dependencies": {
+    "glob": "^7.1.2"
+  }
+}

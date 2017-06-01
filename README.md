@@ -1,6 +1,8 @@
 node-pathname
 =============
 
+[![CircleCI](https://circleci.com/gh/yadex205/node-pathname.svg?style=shield)](https://circleci.com/gh/yadex205/node-pathname)
+
 Node.js implementation of Ruby's Pathname.
 
 

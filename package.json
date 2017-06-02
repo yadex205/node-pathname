@@ -1,5 +1,5 @@
 {
-  "name": "pathname",
+  "name": "node-pathname",
   "version": "0.1.0",
   "description": "Node.js implementation of Ruby's Pathname",
   "main": "index.js",

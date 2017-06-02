@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "doc": "jsdoc index.js",
-    "test": "nyc mocha"
+    "test": "nyc mocha -R dot"
   },
   "engines": {
     "node": ">=4.0"

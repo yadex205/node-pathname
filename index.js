@@ -1,5 +1,6 @@
 'use strict'
 
+const fs   = require('fs')
 const path = require('path')
 
 function Pathname(filepath) {
@@ -76,6 +77,14 @@ Pathname.prototype = {
 
   split: function() {
     return [this.dirname(), this.basename()]
+  },
+
+  stat: function(callback) {
+    if (typeof callback === 'function') {
+      fs.stat(this.toString(), callback)
+    } else {
+      return fs.statSync(this.toString())
+    }
   },
 
   sub: function(pattern, replace) {

@@ -1,5 +1,6 @@
-const expect = require('chai').expect
+const expect   = require('chai').expect
 const Pathname = require('..')
+const fs       = require('fs')
 
 describe('Pathname', () => {
   'use strict'
@@ -221,6 +222,24 @@ describe('Pathname', () => {
     let base = new Pathname('/hoge')
     it('should return a relative path', () => {
       expect(pathname.relativePathFrom(base).toString()).to.eql('foo/bar')
+    })
+  })
+
+  describe('#stat', () => {
+    let pathname = new Pathname(__dirname).join('../package.json')
+    context('when no callback given', () => {
+      it('should return fs.Stats in sync', () => {
+        expect(pathname.stat()).instanceof(fs.Stats)
+      })
+    })
+
+    context('when callback given', () => {
+      it('should callback function with fs.Stats in async', (done) => {
+        pathname.stat((error, stats) => {
+          expect(stats).instanceof(fs.Stats)
+          done()
+        })
+      })
     })
   })
 

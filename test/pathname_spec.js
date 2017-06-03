@@ -39,6 +39,24 @@ describe('Pathname', () => {
     })
   })
 
+  describe('atime', () => {
+    let pathname = new Pathname(__dirname).join('../package.json')
+    context('when no callback given', () => {
+      it('should return atime', () => {
+        expect(pathname.atime()).to.be.an.instanceOf(Date)
+      })
+    })
+
+    context('when callback given', () => {
+      it('should callback function with atime', (done) => {
+        pathname.atime((error, atime) => {
+          expect(atime).to.be.an.instanceOf(Date)
+          done()
+        })
+      })
+    })
+  })
+
   describe('#basename', () => {
     it('should return "bar"', () => {
       expect(new Pathname('foo/bar').basename().toString()).to.eql('bar')
@@ -49,9 +67,45 @@ describe('Pathname', () => {
     })
   })
 
+  describe('birthtime', () => {
+    let pathname = new Pathname(__dirname).join('../package.json')
+    context('when no callback given', () => {
+      it('should return birthtime', () => {
+        expect(pathname.birthtime()).to.be.an.instanceOf(Date)
+      })
+    })
+
+    context('when callback given', () => {
+      it('should callback function with birthtime', (done) => {
+        pathname.birthtime((error, birthtime) => {
+          expect(birthtime).to.be.an.instanceOf(Date)
+          done()
+        })
+      })
+    })
+  })
+
   describe('#cleanpath', () => {
     it('should return "foo"', () => {
       expect(new Pathname('./foo/bar/./../baz/..').cleanpath().toString()).to.eql('foo')
+    })
+  })
+
+  describe('ctime', () => {
+    let pathname = new Pathname(__dirname).join('../package.json')
+    context('when no callback given', () => {
+      it('should return ctime', () => {
+        expect(pathname.ctime()).to.be.an.instanceOf(Date)
+      })
+    })
+
+    context('when callback given', () => {
+      it('should callback function with ctime', (done) => {
+        pathname.ctime((error, ctime) => {
+          expect(ctime).to.be.an.instanceOf(Date)
+          done()
+        })
+      })
     })
   })
 
@@ -162,6 +216,42 @@ describe('Pathname', () => {
 
     it('should be falsey', () => {
       expect(new Pathname('foo').isAbsolute()).to.be.false
+    })
+  })
+
+  describe('isBlockDevice', () => {
+    let pathname = new Pathname(__dirname).join('../package.json')
+    context('when no callback given', () => {
+      it('should return bool', () => {
+        expect(pathname.isBlockDevice()).to.be.a('boolean')
+      })
+    })
+
+    context('when callback given', () => {
+      it('should callback function with bool', (done) => {
+        pathname.isBlockDevice((error, result) => {
+          expect(result).to.be.a('boolean')
+          done()
+        })
+      })
+    })
+  })
+
+  describe('isExecutable', () => {
+    let pathname = new Pathname(__dirname).join('../package.json')
+    context('when no callback given', () => {
+      it('should return bool', () => {
+        expect(pathname.isExecutable()).to.be.a('boolean')
+      })
+    })
+
+    context('when callback given', () => {
+      it('should callback function with bool', (done) => {
+        pathname.isExecutable((error, result) => {
+          expect(result).to.be.a('boolean')
+          done()
+        })
+      })
     })
   })
 

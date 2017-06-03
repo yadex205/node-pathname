@@ -4,8 +4,8 @@
   "description": "Node.js implementation of Ruby's Pathname",
   "main": "index.js",
   "scripts": {
-    "doc": "jsdoc index.js",
-    "test": "nyc mocha -R dot"
+    "doc": "jsdoc index.js -d ./docs -t ./node_modules/ink-docstrap/template -R ./README.md",
+    "test": "mocha -R dot"
   },
   "engines": {
     "node": ">=4.0"
@@ -25,6 +25,7 @@
   "homepage": "https://github.com/yadex205/node-pathname#readme",
   "devDependencies": {
     "chai": "^4.0.1",
+    "ink-docstrap": "^1.3.0",
     "jsdoc": "^3.4.3",
     "mocha": "^3.4.2",
     "nyc": "^11.0.1",

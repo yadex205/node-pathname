@@ -5,6 +5,28 @@ node-pathname
 
 Node.js implementation of Ruby's Pathname.
 
+Usage
+-----
+
+Install with npm
+
+```bash
+$ npm install --save node-pathname
+```
+
+```js
+const Pathname = require('node-pathname')
+
+const NODE_ROOT = new Pathname('.')
+let packageJson = NODE_ROOT.join('package.json')
+console.log(packageJson.expandPath().toString()) // => /path/to/current/directory/package.json
+```
+
+Requirements
+------------
+
+* Node.js >= 4.0.0
+
 
 License
 -------

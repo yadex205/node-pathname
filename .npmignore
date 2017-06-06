@@ -1,0 +1,12 @@
+/node_modules
+/npm-*.logs
+/coverage
+/.nyc_output
+/out
+/docs
+/test
+/.git
+
+circle.yml
+.nvmrc
+.gitignore

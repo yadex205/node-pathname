@@ -224,14 +224,14 @@ Pathname.prototype = {
    * @param {function} [callback]
    * @return {Boolean|null}
    */
-  isExecutable: accessMethod(fs.constants.X_OK),
+  isExecutable: accessMethod(0b001),
 
   /**
    * @method
    * @param {function} [callback]
    * @return {Boolean|null}
    */
-  isExist: accessMethod(fs.constants.F_OK),
+  isExist: accessMethod(0b0),
 
   /**
    * @method
@@ -283,7 +283,7 @@ Pathname.prototype = {
    * @param {function} [callback]
    * @return {Boolean|null}
    */
-  isReadable: accessMethod(fs.constants.R_OK),
+  isReadable: accessMethod(0b100),
 
   /**
    * @return {Boolean}
@@ -318,7 +318,7 @@ Pathname.prototype = {
    * @param {function} [callback]
    * @return {Boolean|null}
    */
-  isWritable: accessMethod(fs.constants.W_OK),
+  isWritable: accessMethod(0b010),
 
   /**
    * @param {function} [callback]
